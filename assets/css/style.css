@@ -1,0 +1,38 @@
+body {
+	background-color: teal;
+}
+
+#game-header {
+	color: white;
+	background-color: #C48517;
+	padding: 10px 0;
+	width: 200px;
+}
+
+#paragraph {
+	color: green;
+	background-color: tan;
+	font-style: bold;
+	width: 300px;
+}
+
+#targetNumber {
+	color: black;
+	background-color: green;
+	float: left;
+	height: 100px;
+	width: 100px;
+	margin-right: 30px;
+	font-size: 30px;
+}
+
+#gameStats {
+	background-color: #3DE7F3;
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+
+#crystals {
+	clear: both;
+}

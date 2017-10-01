@@ -4,21 +4,13 @@ var losses = 0;
 var targetNumber = 19 + Math.floor(Math.random() * 101);
 $("#targetNumber").html(targetNumber);
 
-// 	WHY ISNT MY HTML BEING REPLACED WITH A NEW NUMBER!?! but it replaces down below
-function getNewTargetNumber () {
-	return targetNumber = 19 + Math.floor(Math.random() * 101);
-	$(this).replaceWith(targetNumber);
-}
+// create a function that will update the wins/losses?
 
-
-// create a function to start game?
-
-// created 4 unique crystal values.
+// created 4 unique crystal values and put them in an array
 var crystalValue1 = 1 + Math.floor(Math.random() * 12);
 var crystalValue2 = 1 + Math.floor(Math.random() * 12);
 var crystalValue3 = 1 + Math.floor(Math.random() * 12);
 var crystalValue4 = 1 + Math.floor(Math.random() * 12);
-
 var crystalArray = [crystalValue1, crystalValue2, crystalValue3, crystalValue4];
 console.log(crystalArray);
 
@@ -45,22 +37,38 @@ $(".crystal-image").on("click", function() {
 	if (counter === targetNumber) {
 		alert("You win!");
 		wins++;
-		counter = 0;
-		getNewTargetNumber();
-		console.log("new target number: " + targetNumber);
-		// get new values for array
+		resetGame();
+		console.log("This is the new target: " + targetNumber);
+		// call function reset game which will... 
+		// bring counter back to zero, get a new target number,
+		// get new values for the array.
 	}
 	else if (counter >= targetNumber) {
 		alert("You lose!");
 		losses++;
-		counter = 0;
-		getNewTargetNumber();
-		console.log("new target number: " + targetNumber);
-		// get new values for array.
+		resetGame();
+		console.log("This is the new target: " + targetNumber);
+		// call function reset game which will... 
+		// bring counter back to zero, get a new target number,
+		// get new values for the array.
 	}
 	$("#currentScore").html(counter);
 	console.log(counter);
 });
 
-// create function for updateGameInfo();
+function resetGame() {
+	// put counter back to zero
+	counter = 0;
 
+	// get a new target number
+	// working but not replacing it in HTML. WHY?!??!?!
+	targetNumber = getNewTargetNumber();
+
+	// get new array values
+	// no idea how to start
+}
+
+function getNewTargetNumber() {
+	return newTargetNumber = 19 + Math.floor(Math.random() * 101);
+	$("#targetNumber").html(newTargetNumber);
+}
