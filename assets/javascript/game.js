@@ -2,17 +2,17 @@ var wins = 0;
 var counter = 0;
 var losses = 0;
 var targetNumber = 19 + Math.floor(Math.random() * 101);
-$("#targetNumber").append(targetNumber);
+$("#targetNumber").html(targetNumber);
 
+// 	WHY ISNT MY HTML BEING REPLACED WITH A NEW NUMBER!?! but it replaces down below
 function getNewTargetNumber () {
 	return targetNumber = 19 + Math.floor(Math.random() * 101);
+	$(this).replaceWith(targetNumber);
 }
 
-initializeGame();
 
-function initializeGame() {
+// create a function to start game?
 
-}
 // created 4 unique crystal values.
 var crystalValue1 = 1 + Math.floor(Math.random() * 12);
 var crystalValue2 = 1 + Math.floor(Math.random() * 12);
@@ -45,16 +45,22 @@ $(".crystal-image").on("click", function() {
 	if (counter === targetNumber) {
 		alert("You win!");
 		wins++;
-		start();
+		counter = 0;
+		getNewTargetNumber();
+		console.log("new target number: " + targetNumber);
+		// get new values for array
 	}
 	else if (counter >= targetNumber) {
 		alert("You lose!");
 		losses++;
-		start();
+		counter = 0;
+		getNewTargetNumber();
+		console.log("new target number: " + targetNumber);
+		// get new values for array.
 	}
-})
+	$("#currentScore").html(counter);
+	console.log(counter);
+});
 
-var currentScore = "Your total score is: " + counter;
-$("#currentScore").append(currentScore);
 // create function for updateGameInfo();
 
