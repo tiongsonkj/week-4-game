@@ -1,5 +1,5 @@
 body {
-	background-color: teal;
+	background-color: #ADF1FE
 }
 
 #game-header {
@@ -28,8 +28,8 @@ body {
 
 #gameStats {
 	background-color: #3DE7F3;
-	height: 100px;
-	width: 100px;
+	height: 200px;
+	width: 200px;
 	float: left;
 }
 
