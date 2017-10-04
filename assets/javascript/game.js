@@ -35,7 +35,6 @@ getCrystalValue();
 $(".crystal-image").on("click", function() {
 	var crystalNewValue = ($(this).attr("data-crystalvalue"));
 	crystalNewValue = parseInt(crystalNewValue);
-	// alert(crystalNewValue);
 	counter += crystalNewValue;
 	alert(counter);
 
@@ -70,7 +69,6 @@ function resetGame() {
 	counter = 0;
 
 	// get a new target number
-	// working but not replacing it in HTML. WHY?!??!?!
 	// redisplayed this to the page
 	targetNumber = getNewTargetNumber();
 	$("#targetNumber").html(targetNumber);
