@@ -4,8 +4,6 @@ var losses = 0;
 var targetNumber = 19 + Math.floor(Math.random() * 101);
 $("#targetNumber").html(targetNumber);
 
-// create a function that will update the wins/losses?
-
 // created 4 unique crystal values and put them in an array
 function getCrystalValue () {
 	// going 1 ID in a time and putting value in it
@@ -44,7 +42,6 @@ $(".crystal-image").on("click", function() {
 		resetGame();
 		$("#gameStats").html("<p>You won!</p>" + 
 			"<p>Wins: </p>" + wins + "<p>Losses: </p>" + losses);
-		console.log("This is the new target: " + targetNumber);
 		// call function reset game which will... 
 		// bring counter back to zero, get a new target number,
 		// get new values for the array.
@@ -55,13 +52,11 @@ $(".crystal-image").on("click", function() {
 		resetGame();
 		$("#gameStats").html("<p>You lost!</p>" + 
 			"<p>Wins: </p>" + wins + "<p>Losses: </p>" + losses);
-		console.log("This is the new target: " + targetNumber);
 		// call function reset game which will... 
 		// bring counter back to zero, get a new target number,
 		// get new values for the array.
 	}
 	$("#currentScore").html(counter);
-	console.log(counter);
 });
 
 function resetGame() {
@@ -82,3 +77,4 @@ function getNewTargetNumber() {
 	return newTargetNumber = 19 + Math.floor(Math.random() * 101);
 	$("#targetNumber").html(newTargetNumber);
 }
+
